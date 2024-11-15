@@ -16,9 +16,8 @@ dotenv.config();
 const host = process.env.HOST || "localhost";
 const port = process.env.PORT || 3000;
 
-const src = path.dirname(url.fileURLToPath(import.meta.url));
-const root = path.join(src, "/");
-
+const dist = path.dirname(url.fileURLToPath(import.meta.url));
+const dir = path.join(dist, "../public");
 
 // Initialization
 const app = express();
@@ -31,7 +30,7 @@ app.use(logger("tiny"));
 
 
 // CORS Middleware
-const allowedOrigins = ["http:/127.0.0.1", "http:/127.0.0.1:3000"];
+const allowedOrigins = ["http://localhost", "http://localhost:3000"];
 
 const corsOptions = {
   origin: allowedOrigins,
@@ -65,7 +64,7 @@ app.use("/", router, (req, res, next) => {
 
 // Route
 router.get('/', (req, res) => {
-  res.sendFile(path.join(root, 'artykul.html'));
+  res.sendFile(path.join(dir, '/artykul.html'));
 });
 
 // API
@@ -73,6 +72,6 @@ router.get("/api", (req, res) => {
   res.json({ message: "Welcome to the Express API!" });
 });
 
-server.listen(PORT, () => {
-  console.log(`Serwer działa na porcie http:127.0.0.1:${PORT}`);
+server.listen(port, () => {
+  console.log(`Serwer działa na porcie http://localhost:${port}`);
 });

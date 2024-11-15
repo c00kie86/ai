@@ -1,9 +1,9 @@
 ```bash
 
-    git clone https://github.com/c00kie86/ai.git
+git clone https://github.com/c00kie86/ai.git
 
-    npm run ai
-    npm run start
+npm run ai
+npm run start
 
 ```
 
@@ -30,7 +30,7 @@ repozytorium. Więcej informacji w sekcji „Jak odesłać zadanie?”.
 
 ---
 
-### query
+### prompt
 ```bash
 
 - Keep above text structure and add semantic markup html to article such as header or section where each must contain figure, img src="image_placeholder.jpg" alt="title", figcaption (title), h1 or h2 (title), p (description). Use footer for last sentence
