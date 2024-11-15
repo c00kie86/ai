@@ -1,0 +1,9 @@
+# folders
+/node_modules/
+
+# files
+.env*
+
+deploy.sh
+
+package-lock.json
