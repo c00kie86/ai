@@ -9,7 +9,7 @@ cd ai
 
 npm install
 
-touch .env
+nano .env
 
 ```
 
@@ -22,7 +22,6 @@ PORT=3000
 # OpenAI
 OPENAI_API_KEY=YOUR_API_KEY
 ```
-
 
 ### use node
 ```bash
