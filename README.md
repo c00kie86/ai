@@ -18,6 +18,8 @@ nano .env
 # Node.js
 HOST=127.0.0.1
 PORT=3001
+ORIGIN=http://localhost:3001
+CONNECT=http://localhost:3001
 
 # OpenAI
 OPENAI_API_KEY=YOUR_API_KEY
@@ -30,7 +32,7 @@ OPENAI_API_KEY=YOUR_API_KEY
 npm run ai # 401 Incorrect API key provided
 
 # Uruchom server.js
-npm run start # http://localhost:3001
+npm run start # http://localhost:300
 
 ```
 
@@ -183,11 +185,11 @@ Keep above text structure and add semantic markup html to article such as header
 <meta name="keywords" content="artykul" />
 <meta name="google-site-verification" content="" />
 <meta name="robots" content="nosnippet, noindex, nofollow" />
-<meta property="og:url" content="http://localhost:3001" />
+<meta property="og:url" content="http://localhost:300" />
 <meta property="og:type" content="Progresive" />
 <meta property="og:title" content="title" />
 <meta property="og:description" content="description" />
-<link rel="canonical" href="http://localhost:3001" />
+<link rel="canonical" href="http://localhost:300" />
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <script src="https://cdn.tailwindcss.com"></script>
 </head>

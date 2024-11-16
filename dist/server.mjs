@@ -31,10 +31,9 @@ app.use(logger("tiny"));
 
 
 // CORS Middleware
-const allowedOrigins = ["http://localhost:3001", "https://cdn.tailwindcss.com"];
-
+const allowedOrigin = (process.env.ORIGIN ?? "localhost:3001").split(",");
 const corsOptions = {
-  origin: allowedOrigins,
+  origin: allowedOrigin,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
@@ -46,6 +45,7 @@ app.use(cors(corsOptions));
 
 
 // Helmet Middleware
+const allowedConnect = (process.env.CONNECT ?? "localhost:3001").split(",");
 const helmetOptions = {
   contentSecurityPolicy: {
       directives: {
@@ -53,7 +53,7 @@ const helmetOptions = {
           scriptSrc: ["'self'", "https://*.googletagmanager.com", "https://cdn.tailwindcss.com"],
           styleSrc: ["'self'", "https://fonts.googleapis.com", "'unsafe-inline'"],
           fontSrc: ["'self'", "https://fonts.gstatic.com"],
-          connectSrc: ["'self'", "http://localhost:3001", "https://cdn.tailwindcss.com"],
+          connectSrc: allowedConnect,
           imgSrc: ["'self'", "data:"],
           objectSrc: ["'none'"],
       },
