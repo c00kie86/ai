@@ -1,6 +1,6 @@
 async function loadTemplate() {
   try {
-    const res = await fetch("http://localhost:3000/article.html");
+    const res = await fetch("article.html");
     const article = await res.text();
 
     const template = document.getElementById("article");

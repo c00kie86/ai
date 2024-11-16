@@ -5,8 +5,8 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "start": "node --env-file=.env dist/server.mjs",
-    "ai": "node --env-file=.env dist/ai.mjs"
+    "ai": "node --env-file=.env dist/ai.mjs",
+    "start": "node --env-file=.env dist/server.mjs"
   },
   "author": "c00kie86",
   "license": "ISC",
