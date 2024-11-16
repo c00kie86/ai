@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Sztuczna inteligencja",
   "type": "module",
-  "main": "server.js",
+  "main": "server.mjs",
   "scripts": {
     "ai": "node --env-file=.env dist/ai.mjs",
     "start": "node --env-file=.env dist/server.mjs"
