@@ -14,7 +14,7 @@ dotenv.config();
 
 // Settings
 const host = process.env.HOST || "localhost";
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 const dist = path.dirname(url.fileURLToPath(import.meta.url));
 const dir = path.join(dist, "../public");
