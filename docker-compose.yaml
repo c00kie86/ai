@@ -5,8 +5,8 @@ services:
     image: node:22.11.0-slim
     network_mode: host
     volumes:
-      - ./dist/ai.js:/usr/src/ai/dist/ai.js
-      - ./dist/server.js:/usr/src/ai/dist/server.js
+      - ./dist/ai.mjs:/usr/src/ai/dist/ai.mjs
+      - ./dist/server.mjs:/usr/src/ai/dist/server.mjs
       - ./node_modules:/usr/src/ai/node_modules
       - ./public:/usr/src/ai/public
       - ./.env:/usr/src/ai/.env
