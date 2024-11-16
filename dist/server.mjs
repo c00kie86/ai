@@ -19,6 +19,7 @@ const port = process.env.PORT || 3000;
 const dist = path.dirname(url.fileURLToPath(import.meta.url));
 const dir = path.join(dist, "../public");
 
+
 // Initialization
 const app = express();
 const server = http.createServer(app);
@@ -88,15 +89,18 @@ app.use("/", router, (req, res, next) => {
   next();
 });
 
+
 // Route
 router.get('/', (req, res) => {
   res.sendFile(path.join(dir, '/index.html'));
 });
 
+
 // API
 router.get("/api", (req, res) => {
   res.json({ message: "Welcome to the Express API!" });
 });
+
 
 server.listen(port, () => {
   console.log(`Serwer działa na porcie http://localhost:${port}`);

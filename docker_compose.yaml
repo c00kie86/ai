@@ -1,0 +1,17 @@
+version: "3"
+services:
+  node:
+    container_name: node
+    image: node:22.11.0-slim
+    network_mode: host
+    volumes:
+      - ./dist/ai.js:/usr/src/ai/dist/ai.js
+      - ./dist/server.js:/usr/src/ai/dist/server.js
+      - ./node_modules:/usr/src/ai/node_modules
+      - ./public:/usr/src/ai/public
+      - ./.env:/usr/src/ai/.env
+      - ./.gitignore:/usr/src/ai/.gitignore
+      - ./package.json:/usr/src/ai/package.json
+      - ./package-lock.json:/usr/src/ai/package-lock.json
+    working_dir: /usr/src/ai
+    command: "npm start"

@@ -1,14 +1,71 @@
-## Repozytorium ai
+# Repozytorium ai
+
+### config
 ```bash
 
 git clone https://github.com/c00kie86/ai.git
 
+cd ai
+
 npm install
 
+touch .env
+
+```
+
+### .env
+```bash
+# Node.js
+HOST=127.0.0.1
+PORT=3000
+
+# OpenAI
+OPENAI_API_KEY=YOUR_API_KEY
+```
+
+
+### use node
+```bash
+
+# Uruchom ai.js
 npm run ai # 401 Incorrect API key provided
+
+# Uruchom server.js
 npm run start # http://localhost:3000
 
 ```
+
+### config docker
+```bash
+# Instalacja Dockera
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+# Dodanie użytkownika do grupy docker
+sudo usermod -aG docker $USER
+
+# Instalacja Docker Compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Sprawdzenie wersji Docker Compose
+docker-compose --version
+```
+### use docker-compose
+```bash
+
+# Zbudowanie i uruchomienie kontenera
+docker-compose -f docker-compose.yaml up -d
+
+# Wszystkie uruchomione kontenery
+docker ps
+
+# Uruchom ai.js
+docker exec -it node --env-file=.env /usr/src/ai/dist/ai.js
+
+```
+
+---
 
 ### Zadanie rekrutacyjne
 #### Junior AI Developer
