@@ -12,10 +12,7 @@ dotenv.config();
 // Settings
 const dist = path.dirname(url.fileURLToPath(import.meta.url));
 const dir = path.join(dist, "../public");
-
-const prompt = "Keep above text structure and add semantic markup html to article such as header or section where each must contain figure, img src='image_placeholder.jpg' alt='title', figcaption (title), h1 or h2 (title), p (description). Use footer for last sentence"
-
-
+const prompt = "Keep above text structure and add semantic markup html to article such as header or section where each must contain figure, img src='image_placeholder.jpg' alt='title', figcaption (title), h1 or h2 (title), p (description). Use footer for last sentence";
 const apiKey = process.env.OPENAI_API_KEY
 
 console.log(typeof apiKey, apiKey)
@@ -97,7 +94,7 @@ async function writeFileAsync(filepath, input) {
     console.error(err);
   }
 }
-// writeFileAsync(`${dir}/artykul.html`, "<html>" );
+// writeFileAsync(`${dir}/article.html`, "<html>" );
 
 
 async function convertBase64toImage(filepath, input) {
@@ -109,7 +106,7 @@ async function convertBase64toImage(filepath, input) {
     console.error(err);
   }
 }
-// convertBase64toImage(`${dir}/img/img.jpg`, "str");
+// convertBase64toImage(`${dir}/img/file.jpg`, "base64");
 
 
 async function extractImgesAttributes(input) {
@@ -125,9 +122,9 @@ async function extractImgesAttributes(input) {
  
 async function init() {
   try {
-    const text = await readFileAsync(`${dir}/doc/artykul.txt`)
+    const text = await readFileAsync(`${dir}/doc/article.txt`)
     const html = await transformTextToHTML(text, prompt);
-    // await writeFileAsync(`${dir}/artykul.html`, html );
+    // await writeFileAsync(`${dir}/article.html`, html );
     console.log(html)
     return;
   } catch (err) {

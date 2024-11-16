@@ -30,7 +30,7 @@ app.use(logger("tiny"));
 
 
 // CORS Middleware
-const allowedOrigins = ["http://localhost", "http://localhost:3000"];
+const allowedOrigins = ["http://localhost:3000", "https://cdn.tailwindcss.com"];
 
 const corsOptions = {
   origin: allowedOrigins,
@@ -45,7 +45,29 @@ app.use(cors(corsOptions));
 
 
 // Helmet Middleware
-app.use(helmet());
+const helmetOptions = {
+  contentSecurityPolicy: {
+      directives: {
+          defaultSrc: ["'self'"],
+          scriptSrc: ["'self'", "https://*.googletagmanager.com", "https://cdn.tailwindcss.com"],
+          styleSrc: ["'self'", "https://fonts.googleapis.com", "'unsafe-inline'"],
+          fontSrc: ["'self'", "https://fonts.gstatic.com"],
+          connectSrc: ["'self'", "http://localhost:3000", "https://cdn.tailwindcss.com"],
+          imgSrc: ["'self'", "data:"],
+          objectSrc: ["'none'"],
+      },
+  },
+  crossOriginEmbedderPolicy: { policy: "unsafe-none" },
+  crossOriginOpenerPolicy: { policy: "same-origin" },
+  crossOriginResourcePolicy: { policy: "same-origin" },
+  referrerPolicy: { policy: "no-referrer" },
+  frameguard: { action: "sameorigin" },
+  noSniff: true,
+  dnsPrefetchControl: { allow: false },
+  hidePoweredBy: true,
+};
+
+app.use(helmet(helmetOptions));
 
 
 // JSON Parse Middleware
@@ -56,6 +78,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
+// Static Middleware
+app.use(express.static(dir));
+
+
 // Origin
 app.use("/", router, (req, res, next) => {
   res.header("Vary", "Origin");
@@ -64,7 +90,7 @@ app.use("/", router, (req, res, next) => {
 
 // Route
 router.get('/', (req, res) => {
-  res.sendFile(path.join(dir, '/artykul.html'));
+  res.sendFile(path.join(dir, '/index.html'));
 });
 
 // API

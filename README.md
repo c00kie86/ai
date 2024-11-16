@@ -1,9 +1,12 @@
+## Repozytorium ai
 ```bash
 
 git clone https://github.com/c00kie86/ai.git
 
-npm run ai
-npm run start
+npm install
+
+npm run ai # 401 Incorrect API key provided
+npm run start # http://localhost:3000
 
 ```
 
@@ -35,13 +38,11 @@ repozytorium. Więcej informacji w sekcji „Jak odesłać zadanie?”.
 
 - Keep above text structure and add semantic markup html to article such as header or section where each must contain figure, img src="image_placeholder.jpg" alt="title", figcaption (title), h1 or h2 (title), p (description). Use footer for last sentence
 
-- użyj znaczników HTML do semantycznej strukturyzacji podanej treści artykułu dodaj obrazy z wartościami poszczególnych nagłówków użyj stopki dla ostatniego zdania
-
 ```
 
 ---
 
-### artykul.txt
+### article.txt
 ```
 Sztuczna inteligencja: wpływ i wyzwania
 
@@ -70,41 +71,41 @@ Keep above text structure and add semantic markup html to article such as header
 
 ---
 
-### artukul.html
+### article.html
 ```html
-<article>
+<article class="prose mx-auto my-8 p-4 bg-white shadow-md rounded-lg">
   <header>
-    <figure>
-      <img src="image_placeholder.jpg" alt="Sztuczna inteligencja: wpływ i wyzwania" />
-      <figcaption>Sztuczna inteligencja: wpływ i wyzwania</figcaption>
+    <figure class="mb-4">
+      <img src="img/image_placeholder.jpg" alt="Sztuczna inteligencja: wpływ i wyzwania" class="w-full h-auto rounded-lg" />
+      <figcaption class="text-center text-sm text-gray-600 mt-2">Sztuczna inteligencja: wpływ i wyzwania</figcaption>
     </figure>
-    <h1>Sztuczna inteligencja: wpływ i wyzwania</h1>
-    <p>Sztuczna inteligencja to dziedzina nauki i technologii zajmująca się tworzeniem maszyn i programów zdolnych do wykonywania zadań wymagających ludzkiej inteligencji, takich jak uczenie się, rozumienie języka naturalnego i podejmowanie decyzji. AI stała się integralną częścią naszego codziennego życia, od asystentów głosowych w smartfonach, jak Siri czy Google Assistant, po systemy rekomendacyjne na platformach streamingowych, takich jak Netflix czy Spotify. Wspiera nas w planowaniu tras, automatyzacji domowych urządzeń oraz w komunikacji. Obecnie jest o niej bardzo głośno chociażby za sprawą dużych modeli językowych, jak ChatGPT.</p>
-    <p>Rozwój uczenia maszynowego i głębokiego uczenia umożliwił tworzenie zaawansowanych modeli, które potrafią samodzielnie rozwiązywać skomplikowane problemy. Sieci neuronowe analizują ogromne ilości danych w obszarach takich jak rozpoznawanie obrazów czy przetwarzanie języka naturalnego. Dzięki temu AI nie tylko przetwarza dane, ale także podejmuje decyzje, wcześniej zarezerwowane dla ludzi.</p>
+    <h1 class="text-3xl font-bold mb-4">Sztuczna inteligencja: wpływ i wyzwania</h1>
+    <p class="mb-4">Sztuczna inteligencja to dziedzina nauki i technologii zajmująca się tworzeniem maszyn i programów zdolnych do wykonywania zadań wymagających ludzkiej inteligencji, takich jak uczenie się, rozumienie języka naturalnego i podejmowanie decyzji. AI stała się integralną częścią naszego codziennego życia, od asystentów głosowych w smartfonach, jak Siri czy Google Assistant, po systemy rekomendacyjne na platformach streamingowych, takich jak Netflix czy Spotify. Wspiera nas w planowaniu tras, automatyzacji domowych urządzeń oraz w komunikacji. Obecnie jest o niej bardzo głośno chociażby za sprawą dużych modeli językowych, jak ChatGPT.</p>
+    <p class="mb-4">Rozwój uczenia maszynowego i głębokiego uczenia umożliwił tworzenie zaawansowanych modeli, które potrafią samodzielnie rozwiązywać skomplikowane problemy. Sieci neuronowe analizują ogromne ilości danych w obszarach takich jak rozpoznawanie obrazów czy przetwarzanie języka naturalnego. Dzięki temu AI nie tylko przetwarza dane, ale także podejmuje decyzje, wcześniej zarezerwowane dla ludzi.</p>
   </header>
   
   <section>
-  <figure>
-  <img src="image_placeholder.jpg" alt="Wyzwania etyczne i społeczne" />
-  <figcaption>Wyzwania etyczne i społeczne</figcaption>
-  </figure>
-  <h2>Wyzwania etyczne i społeczne</h2>
-  <p>Kluczowym wyzwaniem jest zapewnienie etycznego i odpowiedzialnego rozwoju AI. Należy zwracać uwagę na uprzedzenia w danych treningowych, które mogą prowadzić do dyskryminacji, oraz na wpływ AI na prywatność i nierówności społeczne. Ważne jest opracowanie ram etycznych i mechanizmów nadzoru regulujących rozwój i wdrażanie AI, a także włączanie różnych grup społecznych w ten proces. Transparentność działań firm i instytucji może pomóc w budowaniu zaufania do technologii.</p>
-  <p>Badacze pracują nad rozwiązaniami umożliwiającymi harmonijne współistnienie ludzi i AI, koncentrując się na tworzeniu systemów wspierających człowieka, a nie go zastępujących. Istotne jest opracowywanie mechanizmów współpracy między człowiekiem a maszyną, co sprzyja synergii i skutecznej komunikacji.</p>
+    <figure class="mb-4">
+      <img src="img/image_placeholder.jpg" alt="Wyzwania etyczne i społeczne" class="w-full h-auto rounded-lg" />
+      <figcaption class="text-center text-sm text-gray-600 mt-2">Wyzwania etyczne i społeczne</figcaption>
+    </figure>
+    <h2 class="text-2xl font-semibold mb-4">Wyzwania etyczne i społeczne</h2>
+    <p class="mb-4">Kluczowym wyzwaniem jest zapewnienie etycznego i odpowiedzialnego rozwoju AI. Należy zwracać uwagę na uprzedzenia w danych treningowych, które mogą prowadzić do dyskryminacji, oraz na wpływ AI na prywatność i nierówności społeczne. Ważne jest opracowanie ram etycznych i mechanizmów nadzoru regulujących rozwój i wdrażanie AI, a także włączanie różnych grup społecznych w ten proces. Transparentność działań firm i instytucji może pomóc w budowaniu zaufania do technologii.</p>
+    <p class="mb-4">Badacze pracują nad rozwiązaniami umożliwiającymi harmonijne współistnienie ludzi i AI, koncentrując się na tworzeniu systemów wspierających człowieka, a nie go zastępujących. Istotne jest opracowywanie mechanizmów współpracy między człowiekiem a maszyną, co sprzyja synergii i skutecznej komunikacji.</p>
   </section>
   
   <section>
-    <figure>
-      <img src="image_placeholder.jpg" alt="Automatyzacja i przyszłość rynku pracy" />
-      <figcaption>Automatyzacja i przyszłość rynku pracy</figcaption>
+    <figure class="mb-4">
+      <img src="img/image_placeholder.jpg" alt="Automatyzacja i przyszłość rynku pracy" class="w-full h-auto rounded-lg" />
+      <figcaption class="text-center text-sm text-gray-600 mt-2">Automatyzacja i przyszłość rynku pracy</figcaption>
     </figure>
-    <h2>Automatyzacja i przyszłość rynku pracy</h2>
-    <p>Automatyzacja procesów dzięki AI przynosi korzyści w postaci zwiększonej efektywności i redukcji kosztów. Jednak istnieją obawy dotyczące wpływu na rynek pracy i potencjalnego zastąpienia ludzi przez maszyny. Kluczowe jest przemyślane podejście do transformacji rynku pracy, inwestycja w edukację i przekwalifikowanie pracowników, aby mogli oni znaleźć nowe role w gospodarce przyszłości.</p>
-    <p>Specjaliści powinni być gotowi na ciągłe doskonalenie swoich umiejętności, ucząc się m.in. zasad działania algorytmów AI. Przyszłość pracy będzie wymagać nie tylko umiejętności technicznych, ale także kompetencji miękkich, takich jak kreatywność i zdolność rozwiązywania problemów.</p>
-    <p>Nasza zdolność do adaptacji i innowacji zdecyduje o tym, jak AI wpłynie na przyszłość ludzkości. Wspólnie możemy kształtować tę przyszłość, wykorzystując AI dla dobra wszystkich.</p>
+    <h2 class="text-2xl font-semibold mb-4">Automatyzacja i przyszłość rynku pracy</h2>
+    <p class="mb-4">Automatyzacja procesów dzięki AI przynosi korzyści w postaci zwiększonej efektywności i redukcji kosztów. Jednak istnieją obawy dotyczące wpływu na rynek pracy i potencjalnego zastąpienia ludzi przez maszyny. Kluczowe jest przemyślane podejście do transformacji rynku pracy, inwestycja w edukację i przekwalifikowanie pracowników, aby mogli oni znaleźć nowe role w gospodarce przyszłości.</p>
+    <p class="mb-4">Specjaliści powinni być gotowi na ciągłe doskonalenie swoich umiejętności, ucząc się m.in. zasad działania algorytmów AI. Przyszłość pracy będzie wymagać nie tylko umiejętności technicznych, ale także kompetencji miękkich, takich jak kreatywność i zdolność rozwiązywania problemów.</p>
+    <p class="mb-4">Nasza zdolność do adaptacji i innowacji zdecyduje o tym, jak AI wpłynie na przyszłość ludzkości. Wspólnie możemy kształtować tę przyszłość, wykorzystując AI dla dobra wszystkich.</p>
   </section>
   
-  <footer>
+  <footer class="text-sm text-gray-600 mt-8">
     <p>*Tekst opracowany przez AI. W Oxido nie mamy aż tak cukierkowego spojrzenia na sztuczną inteligencję... ;)</p>
   </footer>
 </article>
@@ -112,7 +113,7 @@ Keep above text structure and add semantic markup html to article such as header
 
 ---
 
-### szablon.html
+### index.html
 ```html
 <!DOCTYPE html>
 <html lang="pl-PL">
@@ -120,24 +121,26 @@ Keep above text structure and add semantic markup html to article such as header
 <meta charset="utf-8" />
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>artykul</title>
-<meta name="description" content="artykul" />
+<title>title</title>
+<meta name="description" content="description" />
 <meta name="theme-color" content="#222222" />
 <meta name="keywords" content="artykul" />
 <meta name="google-site-verification" content="" />
 <meta name="robots" content="nosnippet, noindex, nofollow" />
-<meta property="og:url" content="http://127.0.0.1" />
+<meta property="og:url" content="http://localhost:3000" />
 <meta property="og:type" content="Progresive" />
-<meta property="og:title" content="artykul" />
-<meta property="og:description" content="artykul" />
-<link rel="canonical" href="http://127.0.0.1" />
-<link rel="icon" href="http://127.0.0.1/favicon.ico" type="image/x-icon" />
+<meta property="og:title" content="title" />
+<meta property="og:description" content="description" />
+<link rel="canonical" href="http://localhost:3000" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
 <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-
+<body class="container mx-auto">
+<template id="article"></template>
+<script src="js/script.js"></script>
 </body>
 </html>
+  
 ```
 
 ---
