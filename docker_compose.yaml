@@ -1,7 +1,7 @@
 version: "3"
 services:
   node:
-    container_name: node
+    container_name: ai
     image: node:22.11.0-slim
     network_mode: host
     volumes:
